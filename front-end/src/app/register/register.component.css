@@ -1,0 +1,10 @@
+.img-rectangle {
+  clip-path: ellipse(33% 50%);
+}
+
+.img-carree {
+  clip-path: ellipse(50% 50%);
+  width: 150px;
+  height: 150px;
+  margin-left: 600px;
+}

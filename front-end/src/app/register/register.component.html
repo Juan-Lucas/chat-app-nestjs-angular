@@ -1,0 +1,39 @@
+<h1 class="text-center text-bold">Chat Room</h1>
+<img
+  class="img-thumbnail mt-4 img-carree"
+  src="https://cdn-icons-png.flaticon.com/512/219/219983.png"
+  alt="user"
+/>
+
+<div class="container-fluid col-md-3">
+
+  <div style="margin: auto; margin-top: 30px">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <div class="form-control-group">
+        <label>Username :</label>
+        <br />
+        <input
+          tye="text"
+          nbInput
+          fullWidth
+          name="name"
+          ngModel
+          autofocus
+          class="form-control"
+          required
+        />
+      </div>
+      <br />
+      <div class="form-control-group">
+        <button class="btn btn-block btn-primary" [disabled]="!form.valid">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  <br />
+  <div class="text-center" *ngIf="errors" class="alert alert-danger">
+    {{ errors }}
+  </div>
+</div>
+
