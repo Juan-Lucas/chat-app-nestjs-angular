@@ -18,10 +18,9 @@ export class RegisterService {
         this.setData(response.user);
         console.log(response.user);
       }),
-      catchError(<T>(error: any, result?: T) => {
-        console.log(error);
-        return error;
-      })
+      catchError(err => {
+        throw err.statusText = 'This username has been already taken. Please try another.';
+      }),
     );
   }
 
