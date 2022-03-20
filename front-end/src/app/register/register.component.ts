@@ -25,7 +25,6 @@ export class RegisterComponent implements OnInit {
     this.registerService.createAccount(name).subscribe(res => {
       const navLink: string [] = ['/chat'];
       this.router.navigate(navLink);
-      console.log(res);
     },error => {
       error.message = this.errors
     });

@@ -28,7 +28,9 @@ export class ChatComponent implements OnInit {
   onSubmit(form: NgForm) {
     const { message } = form.value;
     if(!message) return;
+    this.chatService.saveMessage(message);
     this.chatService.sendMessage(message);
+  
     form.reset();
   }
 
@@ -39,4 +41,12 @@ export class ChatComponent implements OnInit {
     })
   }
 
+  geMessages() {
+    this.chatService.getMessages().subscribe( response => {
+      this.messages = response as any[];
+      console.log(response);
+    })
+  }
+
+  
 }

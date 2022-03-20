@@ -15,7 +15,7 @@ import { MessagesModule } from './messages/messages.module';
     password: "",
     database: "chat_db",
     autoLoadEntities: true,
-    synchronize: true,
+    synchronize: false,
     logging: true,
   }), ChatModule, UsersModule, MessagesModule],
   controllers: [AppController],

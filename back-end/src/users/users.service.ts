@@ -13,7 +13,10 @@ export class UsersService {
       ) {}
 
       async getAll() {
-        return await this.usersRepository.find();
+        return await this.usersRepository.find({select: {
+          id: true,
+          name: true
+        }});
       }
 
       async create(data: UsersDTO) {
@@ -23,10 +26,9 @@ export class UsersService {
       }
 
       async getByName(name: string): Promise<UsersDTO> {
-        return await this.usersRepository.findOne({
-          where: {
-            name: name
-          }
-        });
+        return await this.usersRepository
+            .createQueryBuilder("user")
+            .where("user.name = :name", {name: name})
+            .getOne();
       }
 }

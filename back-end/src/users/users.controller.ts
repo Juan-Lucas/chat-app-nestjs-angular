@@ -37,7 +37,7 @@ import {
         };
       }
 
-      @Get(':name')
+      @Get('/:name')
       async readUser(@Param('name') name: string) {
         const data =  await this.usersService.getByName(name);
         return {
