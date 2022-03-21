@@ -21,7 +21,7 @@ export class MessagesController {
     const messages =  await this.messageSercie.getAll();
     return {
       statusCode: HttpStatus.OK,
-      message: 'Users fetched successfully',
+      message: 'Messages fetched successfully',
       messages
     };
   }

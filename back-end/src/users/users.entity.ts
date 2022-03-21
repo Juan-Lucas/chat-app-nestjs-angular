@@ -9,6 +9,6 @@ export class UsersEntity {
     @Column({unique: true})
     name: string
 
-    @OneToMany(() => MessagesEntity, (msg) => msg.sendId)
+    @OneToMany(() => MessagesEntity, (msg) => msg.user)
     messages: MessagesEntity[];
 }

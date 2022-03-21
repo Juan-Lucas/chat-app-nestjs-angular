@@ -7,7 +7,10 @@ export class MessagesEntity {
     id: number;
     
     @ManyToOne(() => UsersEntity, (user) => user.messages)
-    sendId: any;
+    user: UsersEntity;
+    
+    @Column()
+    userId: number;
 
     @Column()
     message: string;

@@ -1,5 +1,5 @@
 export interface MessagesDTO {
     id: number;
-    sendId: any;
+    userId: any;
     message: string;
 }
